@@ -356,7 +356,9 @@
 
 <script data-cms="inline-editor">
 (function(){
-  if(!new URLSearchParams(window.location.search).has('edit'))return;
+  var token='789513b678e64d0a982ec0ae';
+  if(!token||token.indexOf('%%')===0)return;
+  if(new URLSearchParams(window.location.search).get('edit')!==token)return;
 
   var toolbar=document.createElement('div');
   toolbar.id='cms-toolbar';
